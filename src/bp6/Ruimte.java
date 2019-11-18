@@ -8,6 +8,9 @@ public class Ruimte {
     public Ruimte(String id) {
         this.id = id;
     }
+    protected Ruimte(String id){
+        this.id = id;
+    }
 
 
     public String getId() {
