@@ -1,30 +1,26 @@
 package bp6;
 
-
+import bp6.controller.MainController;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.awt.*;
+public class Main extends Application {
 
-public class Main extends Application{
+    private MainController controller;
 
-    private ContainerView containerView;
+    public static void main(String[] args) {
+        launch(args);
+    }
 
-    public void start(Stage primaryStage){
-        Pane mainPane = new Pane();
-        ContainerView containerView = new ContainerView();
-        mainPane.getChildren().add(containerView);
-        Scene scene = new Scene(mainPane, 800, 800);
+    public void start(Stage primaryStage) {
+        controller = new MainController();
+
+        Scene scene = new Scene(controller.mainPane, 1200, 600);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("BP6");
         primaryStage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 
 }

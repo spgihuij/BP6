@@ -1,4 +1,4 @@
-package bp6;
+package bp6.model;
 
 public class Gebruiker {
 
