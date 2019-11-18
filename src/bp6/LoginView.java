@@ -4,6 +4,7 @@ import javafx.beans.InvalidationListener;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
+import javafx.scene.layout.Pane;
 
 import java.awt.*;
 import java.util.Collection;
@@ -11,14 +12,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class LoginView  extends ContainerView {
+public class LoginView  extends Pane {
     private ComboBox cbxGebruikers;
     private Button btnLogin;
     private ObservableList<String> olGebruikers;
-    private ContainerView containerView;
+
 
     public LoginView(){
-        containerView = new ContainerView();
         cbxGebruikers = new ComboBox();
         btnLogin = new Button();
         olGebruikers = new ObservableList<String>() {

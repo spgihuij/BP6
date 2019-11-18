@@ -1,22 +1,23 @@
 package bp6;
 
+import javafx.scene.layout.Pane;
+
 import java.awt.*;
 
-public class WeerView  extends ContainerView {
+public class WeerView extends Pane {
 private Label lblZonkracht;
 private Label lblTemperatuur;
     private Label lblVoorspelling;
     private Label lblAdvies;
 
-    private ContainerView containerView;
+
+
 
     public WeerView(){
-        containerView = new ContainerView();
         lblAdvies = new Label();
         lblTemperatuur = new Label();
         lblVoorspelling = new Label();
         lblZonkracht = new Label();
-
     }
 
 }
