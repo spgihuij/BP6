@@ -1,22 +1,19 @@
 package bp6;
 
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.awt.*;
+public class Main extends Application {
 
-public class Main extends Application{
+    private LoginView loginView;
 
-    private ContainerView containerView;
-
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         Pane mainPane = new Pane();
-        ContainerView containerView = new ContainerView();
-        mainPane.getChildren().add(containerView);
-        Scene scene = new Scene(mainPane, 800, 800);
+        LoginView loginView = new LoginView();
+        mainPane.getChildren().add(loginView);
+        Scene scene = new Scene(mainPane, 1200, 600);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("BP6");
