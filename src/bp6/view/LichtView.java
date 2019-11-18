@@ -1,4 +1,4 @@
-package bp6;
+package bp6.view;
 
 import javafx.fxml.FXML;
 

@@ -1,4 +1,6 @@
-package bp6;
+package bp6.view;
+
+import bp6.model.Beweging;
 
 import java.util.List;
 
