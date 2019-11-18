@@ -6,14 +6,17 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.awt.*;
+
 public class Main extends Application{
 
-    private Pane ContainerView;
+    private ContainerView containerView;
 
     public void start(Stage primaryStage){
         Pane mainPane = new Pane();
-        mainPane.getChildren().add(ContainerView);
-        Scene scene = new Scene(ContainerView, 800, 800);
+        ContainerView containerView = new ContainerView();
+        mainPane.getChildren().add(containerView);
+        Scene scene = new Scene(mainPane, 800, 800);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("BP6");
