@@ -9,6 +9,9 @@ public class Ruimte {
         this.id = id;
         this.lampen = lampen;
     }
+    protected Ruimte(String id){
+        this.id = id;
+    }
 
     public String getId() {
         return id;
