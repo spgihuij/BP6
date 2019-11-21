@@ -1,14 +1,15 @@
-package bp6;
+package bp6.model;
 
 public class Ruimte {
 
     protected String id;
     private String lampen;
 
-    public Ruimte(String id, String lampen) {
+    public Ruimte(String id) {
         this.id = id;
-        this.lampen = lampen;
     }
+
+
 
     public String getId() {
         return id;
