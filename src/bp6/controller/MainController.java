@@ -1,18 +1,16 @@
 package bp6.controller;
 
-import javafx.scene.layout.Pane;
+import javafx.scene.Parent;
 
 public class MainController {
-    public Pane mainPane;
-    private LoginViewController loginController;
+
+    private LichtViewController lichtViewController;
 
     public MainController() {
-        mainPane = new Pane();
+        lichtViewController = new LichtViewController();
     }
 
-    public void login() {
-        loginController = new LoginViewController(mainPane);
-
+    public Parent openLichtViewWindow() {
+        return lichtViewController.getLichtView();
     }
-
 }
