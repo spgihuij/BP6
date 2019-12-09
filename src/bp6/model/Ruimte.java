@@ -9,7 +9,9 @@ public class Ruimte {
         this.id = id;
     }
 
+    public Ruimte() {
 
+    }
 
     public String getId() {
         return id;

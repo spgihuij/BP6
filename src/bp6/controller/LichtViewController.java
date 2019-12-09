@@ -1,11 +1,14 @@
 package bp6.controller;
 
+import bp6.model.LichtwaardeVerzameling;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 public class LichtViewController {
 
     private Parent lichtView;
+    private LichtwaardeVerzameling lichtwaardes;
+
 
     public LichtViewController(){
         setLichtView();
@@ -26,4 +29,5 @@ public class LichtViewController {
     public Parent getLichtView() {
         return lichtView;
     }
+
 }
