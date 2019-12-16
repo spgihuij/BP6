@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 public class MainController {
 
     public LichtViewController lichtViewController;
+    public Parent fxController;
     private Parent root;
 
     public MainController() {
