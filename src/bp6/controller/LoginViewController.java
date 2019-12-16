@@ -1,27 +1,30 @@
 package bp6.controller;
 
-import bp6.view.LoginView;
-import javafx.scene.layout.Pane;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+
 
 public class LoginViewController {
 
-    private Pane pane;
+    private Parent loginView;
 
-    public LoginViewController(Pane pane){
-        this.pane = pane;
-        createView(this.pane);
-        createConnection(this.databaseController);
+    public LoginViewController(){
+        setLoginView();
     }
 
-    public void createView(Pane pane){
+    public void setLoginView(){
+        try
+        {
+            loginView = FXMLLoader.load(getClass().getResource("/bp6/resources/LoginView.fxml"));
+        }
 
-        LoginView loginView = new LoginView();
-        pane.getChildren().add(loginView);
-
+        catch(Exception e)
+        {
+            System.out.println("error code: " + e);
+        }
     }
 
-    public void createConnection(DatabaseController databaseController){}
-    DatabaseController databaseController = new DatabaseController();
-
-
+    public Parent getLoginView() {
+        return loginView;
+    }
 }
