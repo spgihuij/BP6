@@ -10,6 +10,7 @@ public class LoginViewController {
     public LoginViewController(Pane pane){
         this.pane = pane;
         createView(this.pane);
+        createConnection(this.databaseController);
     }
 
     public void createView(Pane pane){
@@ -18,5 +19,9 @@ public class LoginViewController {
         pane.getChildren().add(loginView);
 
     }
+
+    public void createConnection(DatabaseController databaseController){}
+    DatabaseController databaseController = new DatabaseController();
+
 
 }
