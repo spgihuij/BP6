@@ -4,11 +4,13 @@ import javafx.scene.Parent;
 
 public class MainController {
 
-    public LichtViewController lichtViewController;
+    private DatabaseController dbController;
+    private LichtViewController lichtViewController;
     private Parent root;
 
     public MainController() {
-        lichtViewController = new LichtViewController();
+        dbController = new DatabaseController();
+        lichtViewController = new LichtViewController(this.dbController);
         root = lichtViewController.getLichtView();
     }
 

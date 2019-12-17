@@ -7,6 +7,8 @@ public class Lichtwaarde extends Ruimte {
     private Time tijd;
     private int luxBinnen;
     private int luxBuiten;
+    public Lichtwaarde next;
+    public Lichtwaarde previous;
 
     public Lichtwaarde(Time tijd, int luxBinnen, int luxBuiten, String id) {
         super(id);
