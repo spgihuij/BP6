@@ -1,25 +1,31 @@
-package bp6.model;
+package bp6.Models;
 
-import java.time.LocalDateTime;
+import java.sql.Time;
 
 public class Lichtwaarde extends Ruimte {
 
-    private LocalDateTime tijd;
+    private Time tijd;
     private int luxBinnen;
     private int luxBuiten;
+    public Lichtwaarde next;
+    public Lichtwaarde previous;
 
-    public Lichtwaarde(LocalDateTime tijd, int luxBinnen, int luxBuiten, String id){
+    public Lichtwaarde(Time tijd, int luxBinnen, int luxBuiten, String id) {
         super(id);
         this.tijd = tijd;
         this.luxBinnen = luxBinnen;
         this.luxBuiten = luxBuiten;
     }
 
-    public LocalDateTime getTijd() {
+    public Lichtwaarde() {
+        super();
+    }
+
+    public Time getTijd() {
         return tijd;
     }
 
-    public void setTijd(LocalDateTime tijd) {
+    public void setTijd(Time tijd) {
         this.tijd = tijd;
     }
 

@@ -1,7 +1,6 @@
 package bp6;
 
-import bp6.controller.*;
-import bp6.model.*;
+import bp6.Controllers.MainController;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,7 +10,6 @@ public class Main extends Application {
 
     private MainController controller;
 
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -19,7 +17,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         controller = new MainController();
 
-        Parent root = controller.getLoginView();
+        Parent root = controller.getLichtView();
+
         Scene scene = new Scene(root, 1200, 800);
 
         primaryStage.setScene(scene);

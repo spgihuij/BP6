@@ -1,4 +1,4 @@
-package bp6.model;
+package bp6.Models;
 
 public class Ruimte {
 
@@ -9,7 +9,9 @@ public class Ruimte {
         this.id = id;
     }
 
+    public Ruimte() {
 
+    }
 
     public String getId() {
         return id;
