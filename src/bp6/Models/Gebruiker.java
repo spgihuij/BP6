@@ -2,18 +2,19 @@ package bp6.Models;
 
 public class Gebruiker {
 
-    private String id;
+    private int id;
     private String naam;
 
-    public Gebruiker(String id, String naam) {
+    public Gebruiker(int id, String naam) {
         this.id = id;
         this.naam = naam;
     }
-    public String getId() {
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

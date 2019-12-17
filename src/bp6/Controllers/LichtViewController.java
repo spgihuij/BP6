@@ -1,6 +1,7 @@
 package bp6.Controllers;
 
-import bp6.FXMLControllers.FXMLController;
+import bp6.FXMLControllers.LichtViewFXMLController;
+import bp6.Models.GebruikerVerzameling;
 import bp6.Models.LichtwaardeVerzameling;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,8 +11,9 @@ public class LichtViewController {
 
     private Parent lichtView;
     private LichtwaardeVerzameling lichtwaardes;
+    private GebruikerVerzameling gebruikers;
     private DatabaseController dbController;
-    private FXMLController control;
+    private LichtViewFXMLController control;
     private FXMLLoader fxmlLoader;
 
 
@@ -19,12 +21,15 @@ public class LichtViewController {
 
     public LichtViewController(DatabaseController dbController) {
         this.dbController = dbController;
-        control = new FXMLController();
+        control = new LichtViewFXMLController();
         lichtwaardes = new LichtwaardeVerzameling(this.dbController);
+        gebruikers = new GebruikerVerzameling(this.dbController);
         setLichtView();
         getFXMLControl();
         control.setVerbruikteEnergie("1.000");
     }
+
+
 
     private void setLichtView() {
         try {

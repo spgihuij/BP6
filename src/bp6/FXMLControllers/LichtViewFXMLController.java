@@ -2,15 +2,22 @@ package bp6.FXMLControllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.LineChart;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FXMLController implements Initializable {
+public class LichtViewFXMLController implements Initializable {
 
     @FXML
-    private Label verbruikteEnergie;
+    private Label verbruikteEnergie, zonderSysteem, verschil, kosten;
+    @FXML
+    private AnchorPane lichtAnchorPane;
+    @FXML
+    private LineChart lichtLineChart;
+
 
 
     @Override

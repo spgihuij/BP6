@@ -1,53 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="containerAnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bp6.FXMLControllers.ContainerViewFXMLController">
    <children>
       <VBox prefHeight="800.0" prefWidth="1200.0">
         <children>
-          <MenuBar VBox.vgrow="NEVER">
+          <MenuBar fx:id="mbContainer"  VBox.vgrow="NEVER">
             <menus>
-              <Menu mnemonicParsing="false" text="Licht">
+              <Menu fx:id="menuOptie1" mnemonicParsing="false" text="Licht">
                 <items>
-                  <MenuItem mnemonicParsing="false" text="New" />
-                  <MenuItem mnemonicParsing="false" text="Open…" />
-                  <Menu mnemonicParsing="false" text="Open Recent" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Close" />
-                  <MenuItem mnemonicParsing="false" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Save As…" />
-                  <MenuItem mnemonicParsing="false" text="Revert" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Preferences…" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Quit" />
+                  <MenuItem fx:id="menuItem1" mnemonicParsing="false" text="New" />
                 </items>
               </Menu>
-              <Menu mnemonicParsing="false" text="Weer">
+              <Menu fx:id="menuOptie2" mnemonicParsing="false" text="Weer">
                 <items>
-                  <MenuItem mnemonicParsing="false" text="Undo" />
-                  <MenuItem mnemonicParsing="false" text="Redo" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Cut" />
-                  <MenuItem mnemonicParsing="false" text="Copy" />
-                  <MenuItem mnemonicParsing="false" text="Paste" />
-                  <MenuItem mnemonicParsing="false" text="Delete" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Select All" />
-                  <MenuItem mnemonicParsing="false" text="Unselect All" />
+                  <MenuItem fx:id="menuItem2" mnemonicParsing="false" text="Undo" />
                 </items>
               </Menu>
-              <Menu mnemonicParsing="false" text="Beweging">
+              <Menu fx:id="menuOptie3" mnemonicParsing="false" text="Beweging">
                 <items>
-                  <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                  <MenuItem fx:id="menuItem3" mnemonicParsing="false" text="About MyHelloApp" />
                 </items>
               </Menu>
-                  <Menu mnemonicParsing="false" text="Logout">
+                  <Menu fx:id="menuOptie4" mnemonicParsing="false" text="Logout">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                        <MenuItem fx:id="menuItem4" mnemonicParsing="false" text="About MyHelloApp" />
                      </items>
                   </Menu>
             </menus>

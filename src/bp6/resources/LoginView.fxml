@@ -4,15 +4,15 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0"
-            xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="bp6.controller.LoginViewController"
+<AnchorPane fx:id="loginAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0"
+            xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="bp6.FXMLControllers.LoginViewFXMLController"
 >
 
     <children>
 
 
-                <Button layoutX="560.0" layoutY="286.0" mnemonicParsing="false" text="Login" fx:id="loginBtn" />
-                <ComboBox layoutX="510.0" layoutY="245.0" prefWidth="150.0" fx:id="cBox" />
+                <Button fx:id="btnLogin" layoutX="560.0" layoutY="286.0" mnemonicParsing="false" text="Login"  />
+                <ComboBox fx:id="cbxLogin" layoutX="510.0" layoutY="245.0" prefWidth="150.0"  />
 
     </children>
 </AnchorPane>

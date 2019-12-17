@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -11,12 +10,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane id="apMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane  fx:id="bewegingAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1"
+             xmlns:fx="http://javafx.com/fxml/1" fx:controller="bp6.FXMLControllers.BewegingsViewFXMLController">
    <children>
       <VBox id="vbxMain" layoutX="250.0" layoutY="84.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <BarChart>
+            <BarChart fx:id="bewegingBarChart">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -26,15 +25,15 @@
             </BarChart>
             <HBox id="hbxRadio" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label id="lblBeweging" text="Minste beweging per " />
+                  <Label fx:id="lblBeweging" text="Minste beweging per " />
 
-                        <RadioButton id="rdbDag" mnemonicParsing="false" selected="true" text="Dag">
+                        <RadioButton fx:id="rdbDag" mnemonicParsing="false" selected="true" text="Dag">
                            <toggleGroup>
                               <ToggleGroup fx:id="tbgBeweging" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton id="rdbWeek" mnemonicParsing="false" text="Week" toggleGroup="$tbgBeweging" />
-                        <RadioButton id="rdbMaand" mnemonicParsing="false" text="Maand" toggleGroup="$tbgBeweging" />
+                        <RadioButton fx:id="rdbWeek" mnemonicParsing="false" text="Week" toggleGroup="$tbgBeweging" />
+                        <RadioButton fx:id="rdbMaand" mnemonicParsing="false" text="Maand" toggleGroup="$tbgBeweging" />
 
                </children>
             </HBox>
