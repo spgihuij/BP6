@@ -1,4 +1,4 @@
-package bp6.controller;
+package bp6.FXMLControllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

@@ -1,4 +1,4 @@
-package bp6.model;
+package bp6.Models;
 
 import java.util.Date;
 

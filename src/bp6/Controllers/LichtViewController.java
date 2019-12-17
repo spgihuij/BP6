@@ -1,6 +1,7 @@
-package bp6.controller;
+package bp6.Controllers;
 
-import bp6.model.LichtwaardeVerzameling;
+import bp6.FXMLControllers.FXMLController;
+import bp6.Models.LichtwaardeVerzameling;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.chart.LineChart;
@@ -28,7 +29,7 @@ public class LichtViewController {
     private void setLichtView() {
         try {
             fxmlLoader = new FXMLLoader();
-            lichtView = fxmlLoader.load(getClass().getResource("/bp6/resources/LichtView.fxml").openStream());
+            lichtView = fxmlLoader.load(getClass().getResource("/bp6/Resources/LichtView.fxml").openStream());
         } catch (Exception e) {
 
             e.printStackTrace();

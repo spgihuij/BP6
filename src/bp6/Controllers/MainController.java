@@ -1,4 +1,4 @@
-package bp6.controller;
+package bp6.Controllers;
 
 import javafx.scene.Parent;
 

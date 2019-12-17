@@ -1,6 +1,6 @@
-package bp6.model;
+package bp6.Models;
 
-import bp6.controller.DatabaseController;
+import bp6.Controllers.DatabaseController;
 
 import java.util.ArrayList;
 

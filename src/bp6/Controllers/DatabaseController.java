@@ -1,6 +1,6 @@
-package bp6.controller;
+package bp6.Controllers;
 
-import bp6.model.Lichtwaarde;
+import bp6.Models.Lichtwaarde;
 
 import java.sql.*;
 import java.util.ArrayList;

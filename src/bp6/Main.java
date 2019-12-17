@@ -1,6 +1,6 @@
 package bp6;
 
-import bp6.controller.MainController;
+import bp6.Controllers.MainController;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
