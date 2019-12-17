@@ -20,18 +20,15 @@ public class LichtViewController {
         this.dbController = dbController;
         control = new FXMLController();
         lichtwaardes = new LichtwaardeVerzameling(this.dbController);
-
         setLichtView();
-
+        getFXMLControl();
+        control.setVerbruikteEnergie("1.000");
     }
 
     private void setLichtView() {
         try {
             fxmlLoader = new FXMLLoader();
             lichtView = fxmlLoader.load(getClass().getResource("/bp6/resources/LichtView.fxml").openStream());
-            control = fxmlLoader.getController();
-            System.out.println(control);
-            control.setVerbruikteEnergie("100");
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -42,6 +39,9 @@ public class LichtViewController {
         return lichtView;
     }
 
+    public void getFXMLControl(){
 
+        control = fxmlLoader.getController();
+    }
 
 }
