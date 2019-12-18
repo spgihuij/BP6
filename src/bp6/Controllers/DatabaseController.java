@@ -76,10 +76,10 @@ public class DatabaseController {
      */
 
 
-    public ArrayList<Gebruiker> getGebruikers() {
+    public String[] getGebruikers() {
 
-        ArrayList<Gebruiker> gebruikers = new ArrayList<>();
 
+        String[] usernames = new String[20];
         try {
             conn = DriverManager.getConnection(connectionUrl, "root", "admin");
 
@@ -92,11 +92,7 @@ public class DatabaseController {
                 int i = 0;
                 while (rsGebruikers.next() && i <= columns) {
 
-
-                    String gebruiker_naam = rsGebruikers.getString("naam");
-                    Gebruiker newGebruiker = new Gebruiker(gebruiker_naam);
-                    System.out.println("Naam:" + gebruiker_naam);
-                    gebruikers.add(newGebruiker);
+                    usernames[i]=  rsGebruikers.getString("naam");;
                     i++;
                 }
                 System.out.println("exit while");
@@ -109,7 +105,7 @@ public class DatabaseController {
         } catch (SQLException e) {
             throw new Error("Error: ", e);
         }
-        return gebruikers;
+        return usernames;
     }
 
 

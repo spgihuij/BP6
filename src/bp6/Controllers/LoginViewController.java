@@ -1,23 +1,24 @@
 package bp6.Controllers;
 
 import bp6.FXMLControllers.LoginViewFXMLController;
-import bp6.Models.GebruikerVerzameling;
+import bp6.Models.Gebruiker;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 
 public class LoginViewController {
-    private GebruikerVerzameling gebruikers;
     private DatabaseController dbController;
     private LoginViewFXMLController controlFXML;
     private FXMLLoader fxmlLoader;
     private Parent loginView;
+    private String[] usernames;
+
 
 
     public LoginViewController(DatabaseController dbController) {
         this.dbController = dbController;
         controlFXML = new LoginViewFXMLController();
-        gebruikers = new GebruikerVerzameling(this.dbController);
+        RetrieveUsers();
         setLoginView();
         getFXMLControl();
 
@@ -43,6 +44,12 @@ public class LoginViewController {
         controlFXML = fxmlLoader.getController();
     }
 
+
+
+    private void RetrieveUsers() {
+
+        usernames = dbController.getGebruikers();
+    }
 
 
 }
