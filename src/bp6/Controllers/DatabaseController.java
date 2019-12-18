@@ -92,11 +92,10 @@ public class DatabaseController {
                 int i = 0;
                 while (rsGebruikers.next() && i <= columns) {
 
-                    int gebruiker_id = rsGebruikers.getInt("id");
-                    String gebruiker_naam = rsGebruikers.getString("naam");
-                    Gebruiker newGebruiker = new Gebruiker(gebruiker_id,gebruiker_naam);
 
-                    System.out.println("Naam: " + newGebruiker.getNaam());
+                    String gebruiker_naam = rsGebruikers.getString("naam");
+                    Gebruiker newGebruiker = new Gebruiker(gebruiker_naam);
+                    System.out.println("Naam:" + gebruiker_naam);
                     gebruikers.add(newGebruiker);
                     i++;
                 }

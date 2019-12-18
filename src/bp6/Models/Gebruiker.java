@@ -5,6 +5,9 @@ public class Gebruiker {
     private int id;
     private String naam;
 
+    public Gebruiker(String naam){
+        this.naam = naam;
+    }
     public Gebruiker(int id, String naam) {
         this.id = id;
         this.naam = naam;

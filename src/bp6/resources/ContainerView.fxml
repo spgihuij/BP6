@@ -10,31 +10,31 @@
    <children>
       <VBox prefHeight="800.0" prefWidth="1200.0">
         <children>
-          <MenuBar fx:id="mbContainer"  VBox.vgrow="NEVER">
+          <MenuBar fx:id="mbContainer" VBox.vgrow="NEVER">
             <menus>
               <Menu fx:id="menuOptie1" mnemonicParsing="false" text="Licht">
                 <items>
-                  <MenuItem fx:id="menuItem1" mnemonicParsing="false" text="New" />
+                  <MenuItem fx:id="menuItem1" mnemonicParsing="false" onAction="#klikMenuItem1" text="LichtView" />
                 </items>
               </Menu>
               <Menu fx:id="menuOptie2" mnemonicParsing="false" text="Weer">
                 <items>
-                  <MenuItem fx:id="menuItem2" mnemonicParsing="false" text="Undo" />
+                  <MenuItem fx:id="menuItem2" mnemonicParsing="false" onAction="#klikMenuItem2" text="WeerView" />
                 </items>
               </Menu>
               <Menu fx:id="menuOptie3" mnemonicParsing="false" text="Beweging">
                 <items>
-                  <MenuItem fx:id="menuItem3" mnemonicParsing="false" text="About MyHelloApp" />
+                  <MenuItem fx:id="menuItem3" mnemonicParsing="false" onAction="#klikMenuItem3" text="BewegingView" />
                 </items>
               </Menu>
-                  <Menu fx:id="menuOptie4" mnemonicParsing="false" text="Logout">
+                  <Menu fx:id="menuOptie4" mnemonicParsing="false" text="Account"  >
                      <items>
-                        <MenuItem fx:id="menuItem4" mnemonicParsing="false" text="About MyHelloApp" />
+                        <MenuItem fx:id="menuItem4" mnemonicParsing="false" onAction="#klikMenuItem4" text="Afmelden" />
                      </items>
                   </Menu>
             </menus>
           </MenuBar>
-          <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />
+          <AnchorPane fx:id="apMain" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />
         </children>
       </VBox>
    </children>

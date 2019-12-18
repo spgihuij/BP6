@@ -5,11 +5,11 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane fx:id="AnchorPane" fx:controller="bp6.FXMLControllers.FXMLController" maxHeight="-Infinity"
+<AnchorPane fx:id="lichtAnchorPane" fx:controller="bp6.FXMLControllers.LichtViewFXMLController" maxHeight="-Infinity"
             maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0"
             xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
     <children>
-        <LineChart id="LineChart" layoutX="25.0" layoutY="50.0" prefHeight="550.0" prefWidth="1161.0">
+        <LineChart fx:id="lichtLineChart" layoutX="25.0" layoutY="50.0" prefHeight="550.0" prefWidth="1161.0">
             <xAxis>
                 <CategoryAxis side="BOTTOM"/>
             </xAxis>

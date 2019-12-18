@@ -18,4 +18,8 @@ public class GebruikerVerzameling {
     private void RetrieveData() {
         gebruikers = DBController.getGebruikers();
     }
+
+
 }
+
+
