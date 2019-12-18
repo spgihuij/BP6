@@ -1,42 +1,29 @@
 package bp6.Controllers;
 
-import bp6.Models.Lichtwaarde;
 
+import javafx.scene.chart.XYChart;
 import java.sql.*;
-import java.util.ArrayList;
 
 public class DatabaseController {
     private final static String connectionUrl = "jdbc:mysql://localhost:3306/bp6?useSSL=false";
     //  sql queries
-    private static final String getLichtwaardes = "SELECT * FROM lichtwaarde ORDER BY Tijd limit 20 ";
-    private static final String getLastLichtwaarde = "SELECT * from lichtwaarde ORDER BY Tijd LIMIT 1";
+    private static final String getLichtwaarden = "SELECT Tijd, Luxbinnen FROM lichtwaarde ORDER BY Tijd ASC LIMIT 20;";
 
     private Connection conn;
 
-    public ArrayList<Lichtwaarde> getLichtwaarde() {
+    public XYChart.Series getLichtwaarden() {
 
-        ArrayList<Lichtwaarde> lichtwaardes = new ArrayList<>();
+        XYChart.Series<String, Integer> lichtwaardeSeries = new XYChart.Series<>();
 
         try {
             conn = DriverManager.getConnection(connectionUrl, "root", "Stranger5709");
-
             try (Statement statement = conn.createStatement()) {
-                ResultSet rs = statement.executeQuery(getLichtwaardes);
-                ResultSetMetaData rsmetadata = rs.getMetaData();
-                int columns = rsmetadata.getColumnCount();
+                ResultSet rs = statement.executeQuery(getLichtwaarden);
 
-                int i = 0;
-                while (rs.next() && i <= 20) {
-                    Lichtwaarde newLichtwaarde = new Lichtwaarde();
-                    newLichtwaarde.setId(rs.getString("Ruimte_id"));
-                    newLichtwaarde.setTijd(rs.getTime("Tijd"));
-                    newLichtwaarde.setLuxBinnen(rs.getInt("LuxBinnen"));
-                    newLichtwaarde.setLuxBuiten(rs.getInt("LuxBuiten"));
-                    System.out.println("id " + newLichtwaarde.getId() + " |luxbinnen| " + newLichtwaarde.getLuxBinnen() + " |tijd| " + newLichtwaarde.getTijd());
-                    lichtwaardes.add(newLichtwaarde);
-                    i++;
-                }
-                System.out.println("exit while");
+                    while (rs.next()){
+                        System.out.println("datetime|"+rs.getString(1) + "|lux|" +  rs.getInt(2));
+                        lichtwaardeSeries.getData().add(new XYChart.Data<>(rs.getString(1),rs.getInt(2)));
+                    }
                 rs.close();
                 conn.close();
 
@@ -46,6 +33,6 @@ public class DatabaseController {
         } catch (SQLException e) {
             throw new Error("Error: ", e);
         }
-        return lichtwaardes;
+        return lichtwaardeSeries;
     }
 }

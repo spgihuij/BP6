@@ -7,18 +7,12 @@ public class Lichtwaarde extends Ruimte {
     private Time tijd;
     private int luxBinnen;
     private int luxBuiten;
-    public Lichtwaarde next;
-    public Lichtwaarde previous;
 
-    public Lichtwaarde(Time tijd, int luxBinnen, int luxBuiten, String id) {
+    public Lichtwaarde(String id, Time tijd, int luxBinnen, int luxBuiten) {
         super(id);
         this.tijd = tijd;
         this.luxBinnen = luxBinnen;
         this.luxBuiten = luxBuiten;
-    }
-
-    public Lichtwaarde() {
-        super();
     }
 
     public Time getTijd() {

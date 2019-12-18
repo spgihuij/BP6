@@ -2,16 +2,21 @@ package bp6.FXMLControllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 
 import java.net.URL;
+
 import java.util.ResourceBundle;
 
-public class FXMLController implements Initializable {
+public class LichtViewFXMLController implements Initializable {
 
     @FXML
     private Label verbruikteEnergie;
 
+    @FXML
+    private LineChart lineChart;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -22,4 +27,7 @@ public class FXMLController implements Initializable {
         verbruikteEnergie.setText(text);
     }
 
+    public void setLineChart(XYChart.Series series) {
+        lineChart.getData().add(series);
+    }
 }

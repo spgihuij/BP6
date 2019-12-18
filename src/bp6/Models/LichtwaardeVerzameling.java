@@ -1,58 +1,48 @@
 package bp6.Models;
 
 import bp6.Controllers.DatabaseController;
+import javafx.scene.chart.XYChart;
 
 import java.util.ArrayList;
 
 public class LichtwaardeVerzameling {
 
-    private Lichtwaarde first;
-    private Lichtwaarde last;
+
     private int count;
 
     private DatabaseController DBController;
-    private ArrayList<Lichtwaarde> lichtwaardes;
+    private Lichtwaarde lastLichtWaarde;
+    private XYChart.Series lichtwaardes;
+
 
     public LichtwaardeVerzameling(DatabaseController dbController) {
-        lichtwaardes = new ArrayList<>();
         this.DBController = dbController;
-        RetrieveData();
-    }
-
-    public void Enqueue(Lichtwaarde lichtwaarde)
-    {
-        Lichtwaarde newLink = new Lichtwaarde();
-
-        if(first == null)
-        {
-            first = newLink;
-            last = newLink;
-            count = 1;
-        }
-        else
-        {
-            last.next = newLink;
-            last = newLink;
-            count++;
-        }
-    }
-
-    public void Dequeue()
-    {
-        if (first != null)
-        {
-            Lichtwaarde tempLink = first;
-            first = first.next;
-            count--;
-        }
+        RetrieveLichtWaardeArrayList();
     }
 
     public int Count()
     {
         return count;
     }
+/*
+    private void checkArrayList()
+    {
+        lastLichtWaarde = DBController.getLichtwaarde();
 
-    private void RetrieveData() {
-        lichtwaardes = DBController.getLichtwaarde();
+        if( lastLichtWaarde.getTijd().compareTo(lichtwaardes.get(20).getTijd()) != 0)
+        {
+            pop();
+            lichtwaardes.add(lastLichtWaarde);
+        }
+    }
+*/
+    private void RetrieveLichtWaardeArrayList() {
+        lichtwaardes = DBController.getLichtwaarden();
+    }
+
+
+
+    public  XYChart.Series getLichtwaardes() {
+        return lichtwaardes;
     }
 }

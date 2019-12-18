@@ -1,29 +1,32 @@
 package bp6.Controllers;
 
-import bp6.FXMLControllers.FXMLController;
+import bp6.FXMLControllers.LichtViewFXMLController;
+import bp6.Models.Lichtwaarde;
 import bp6.Models.LichtwaardeVerzameling;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
+
+import java.util.ArrayList;
 
 public class LichtViewController {
 
     private Parent lichtView;
-    private LichtwaardeVerzameling lichtwaardes;
+    private LichtwaardeVerzameling lichtwaardeVerzameling;
     private DatabaseController dbController;
-    private FXMLController control;
+    private LichtViewFXMLController control;
     private FXMLLoader fxmlLoader;
-
-
-    private LineChart<Number, Number> lineChart;
+    private XYChart.Series lichtWaardeSeries;
+    private ArrayList<Lichtwaarde> lichtwaardes;
 
     public LichtViewController(DatabaseController dbController) {
         this.dbController = dbController;
-        control = new FXMLController();
-        lichtwaardes = new LichtwaardeVerzameling(this.dbController);
+        control = new LichtViewFXMLController();
+        lichtwaardeVerzameling = new LichtwaardeVerzameling(this.dbController);
+        lichtWaardeSeries = lichtwaardeVerzameling.getLichtwaardes();
         setLichtView();
         getFXMLControl();
-        control.setVerbruikteEnergie("1.000");
+        control.setLineChart(lichtWaardeSeries);
     }
 
     private void setLichtView() {
@@ -31,7 +34,6 @@ public class LichtViewController {
             fxmlLoader = new FXMLLoader();
             lichtView = fxmlLoader.load(getClass().getResource("/bp6/Resources/LichtView.fxml").openStream());
         } catch (Exception e) {
-
             e.printStackTrace();
         }
     }
@@ -40,9 +42,15 @@ public class LichtViewController {
         return lichtView;
     }
 
-    public void getFXMLControl(){
+    public void getFXMLControl() {
 
         control = fxmlLoader.getController();
+    }
+
+    private void createLichtWaardeSeries(XYChart.Series lichtwaarden) {
+
+        control.setLineChart(lichtwaarden);
+
     }
 
 }
