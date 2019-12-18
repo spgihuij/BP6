@@ -29,8 +29,16 @@ public class ContainerViewFXMLController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        AnchorPane pane = null;
+        try {
+            pane = fxmlLoader.load(getClass().getResource("/bp6/Resources/LichtView.fxml").openStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        apMain.getChildren().setAll(pane);
     }
+
 
 
     @FXML

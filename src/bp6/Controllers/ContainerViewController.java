@@ -1,7 +1,11 @@
 package bp6.Controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 
 
 public class ContainerViewController {
@@ -16,6 +20,7 @@ public class ContainerViewController {
         try
         {
             containerView = FXMLLoader.load(getClass().getResource("/bp6/resources/ContainerView.fxml"));
+
         }
 
         catch(Exception e)
@@ -23,6 +28,7 @@ public class ContainerViewController {
             System.out.println("error code: " + e);
         }
     }
+
 
     public Parent getContainerView() {
         return containerView;
