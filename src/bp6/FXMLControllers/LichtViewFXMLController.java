@@ -7,7 +7,6 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import java.net.URL;
-import java.util.Random;
 import java.util.ResourceBundle;
 
 public class LichtViewFXMLController implements Initializable {
