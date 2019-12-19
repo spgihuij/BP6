@@ -56,7 +56,6 @@ public class LichtViewController {
             lichtwaardenSeries.getData().add(new XYChart.Data(l.getTijd(), l.getLuxBinnen()));
             lichtwaardenSeries.setName("Lux binnen");
         }
-
         control.setLineChart(lichtwaardenSeries);
     }
 

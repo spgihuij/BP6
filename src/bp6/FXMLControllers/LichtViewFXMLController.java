@@ -29,6 +29,5 @@ public class LichtViewFXMLController implements Initializable {
     public void setLineChart(XYChart.Series series) {
 
         lineChart.getData().add(series);
-
     }
 }

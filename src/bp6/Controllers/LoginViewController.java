@@ -13,15 +13,11 @@ public class LoginViewController {
     private Parent loginView;
     private String[] usernames;
 
-
-
     public LoginViewController(DatabaseController dbController) {
         this.dbController = dbController;
         controlFXML = new LoginViewFXMLController();
         setLoginView();
         getFXMLControl();
-
-
     }
 
     public void setLoginView() {
