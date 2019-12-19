@@ -1,6 +1,5 @@
 package bp6.FXMLControllers;
 
-import bp6.Models.Lichtwaarde;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
