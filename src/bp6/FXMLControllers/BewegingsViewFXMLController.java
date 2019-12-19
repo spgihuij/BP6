@@ -30,7 +30,7 @@ public class BewegingsViewFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        String query="select tijd, aantalbewegingen from beweging order by tijd asc";
+        String query="select Tijd from beweging order by Tijd";
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
 
         try{
@@ -56,7 +56,7 @@ public class BewegingsViewFXMLController implements Initializable {
 
     private Connection connectDB() throws SQLException {
         String dbString="jdbc:mysql://localhost:3306/bp6?useSSL=false";
-        Connection conn = DriverManager.getConnection(dbString, "root", "admin");
+        Connection conn = DriverManager.getConnection(dbString, "root", "Stranger5709");
         System.out.println("Connection made");
 
 
