@@ -18,23 +18,11 @@ public class Lichtwaarde extends Ruimte {
         return tijd;
     }
 
-    public void setTijd(String tijd) {
-        this.tijd = tijd;
-    }
-
     public int getLuxBinnen() {
         return luxBinnen;
     }
 
-    public void setLuxBinnen(int luxBinnen) {
-        this.luxBinnen = luxBinnen;
-    }
-
     public int getLuxBuiten() {
         return luxBuiten;
-    }
-
-    public void setLuxBuiten(int luxBuiten) {
-        this.luxBuiten = luxBuiten;
     }
 }

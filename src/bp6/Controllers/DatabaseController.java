@@ -22,8 +22,7 @@ public class DatabaseController {
 
     public ArrayList<Lichtwaarde> getLichtwaarden() {
 
-        XYChart.Series<String, Integer> lichtwaardeSeries = new XYChart.Series<>();
-        ArrayList<Lichtwaarde> lichtwaardes = new ArrayList<Lichtwaarde>();
+        ArrayList<Lichtwaarde> lichtwaardes = new ArrayList<>();
 
         try {
 
