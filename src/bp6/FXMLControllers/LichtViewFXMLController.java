@@ -1,9 +1,11 @@
 package bp6.FXMLControllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
@@ -22,6 +24,8 @@ public class LichtViewFXMLController implements Initializable {
     private AnchorPane lichtAnchorPane;
     @FXML
     private LineChart lichtLineChart;
+    @FXML
+    private Button btnVerstuur;
 
     private Connection connexion;
 
@@ -56,6 +60,16 @@ public class LichtViewFXMLController implements Initializable {
     public void setVerbruikteEnergie(String text) {
         verbruikteEnergie.setText(text);
     }
+
+
+    /**
+    @FXML
+    public void btnVerstuurKlik (ActionEvent event){
+        String query="INSERT INTO ruimte " ;// where ruimte id= ... set aantal lampen ....;
+
+    }
+*/
+
 
     private Connection connectDB() throws SQLException {
         String dbString="jdbc:mysql://localhost:3306/bp6?useSSL=false";
