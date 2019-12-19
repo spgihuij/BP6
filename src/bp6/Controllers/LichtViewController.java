@@ -20,7 +20,6 @@ public class LichtViewController {
 
     public LichtViewController(DatabaseController dbController) {
         this.dbController = dbController;
-        control = new LichtViewFXMLController();
 
         lichtwaardeVerzameling = new LichtwaardeVerzameling(this.dbController);
         lichtwaardes = lichtwaardeVerzameling.getLichtwaardes();
