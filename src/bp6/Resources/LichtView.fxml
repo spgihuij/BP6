@@ -34,7 +34,7 @@
         <Label layoutX="727.0" layoutY="676.0" prefHeight="24.0" prefWidth="37.0" text="Kosten" />
         <Label fx:id="kosten" layoutX="764.0" layoutY="676.0" prefHeight="24.0" prefWidth="48.0" />
         <TextField id="aantalLampen" layoutX="764.0" layoutY="655.0" prefWidth="37.0" />
-      <Button fx:id="btnVerstuur" layoutX="812.0" layoutY="655.0" mnemonicParsing="false" text="Verstuur" /> 
+        <Button fx:id="btnVerstuur" layoutX="812.0" layoutY="655.0" mnemonicParsing="false" text="Verstuur" />
 
     </children>
 </AnchorPane>
