@@ -1,13 +1,13 @@
 package bp6.FXMLControllers;
 
+import bp6.Models.Lichtwaarde;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
-
 import java.net.URL;
-
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class LichtViewFXMLController implements Initializable {
@@ -28,6 +28,8 @@ public class LichtViewFXMLController implements Initializable {
     }
 
     public void setLineChart(XYChart.Series series) {
+
         lineChart.getData().add(series);
+
     }
 }

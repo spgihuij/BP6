@@ -4,22 +4,21 @@ import java.sql.Time;
 
 public class Lichtwaarde extends Ruimte {
 
-    private Time tijd;
+    private String tijd;
     private int luxBinnen;
     private int luxBuiten;
 
-    public Lichtwaarde(String id, Time tijd, int luxBinnen, int luxBuiten) {
-        super(id);
+    public Lichtwaarde(String tijd, int luxBinnen, int luxBuiten) {
         this.tijd = tijd;
         this.luxBinnen = luxBinnen;
         this.luxBuiten = luxBuiten;
     }
 
-    public Time getTijd() {
+    public String getTijd() {
         return tijd;
     }
 
-    public void setTijd(Time tijd) {
+    public void setTijd(String tijd) {
         this.tijd = tijd;
     }
 

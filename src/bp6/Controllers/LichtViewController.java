@@ -16,17 +16,16 @@ public class LichtViewController {
     private DatabaseController dbController;
     private LichtViewFXMLController control;
     private FXMLLoader fxmlLoader;
-    private XYChart.Series lichtWaardeSeries;
     private ArrayList<Lichtwaarde> lichtwaardes;
 
     public LichtViewController(DatabaseController dbController) {
         this.dbController = dbController;
         control = new LichtViewFXMLController();
         lichtwaardeVerzameling = new LichtwaardeVerzameling(this.dbController);
-        lichtWaardeSeries = lichtwaardeVerzameling.getLichtwaardes();
+        lichtwaardes = lichtwaardeVerzameling.getLichtwaardes();
         setLichtView();
         getFXMLControl();
-        control.setLineChart(lichtWaardeSeries);
+        createLichtWaardeSeries(lichtwaardes);
     }
 
     private void setLichtView() {
@@ -47,9 +46,27 @@ public class LichtViewController {
         control = fxmlLoader.getController();
     }
 
-    private void createLichtWaardeSeries(XYChart.Series lichtwaarden) {
+    private void createLichtWaardeSeries(ArrayList<Lichtwaarde> lichtwaarden) {
 
-        control.setLineChart(lichtwaarden);
+        XYChart.Series<Integer, String> lichtwaardenSeries = new XYChart.Series();
+
+        for (Lichtwaarde l: lichtwaarden) {
+            lichtwaardenSeries.getData().add(new XYChart.Data(l.getTijd(),l.getLuxBinnen()));
+            lichtwaardenSeries.setName("Lux binnen");
+        }
+
+        control.setLineChart(lichtwaardenSeries);
+    }
+
+    private void createData(){
+
+        Thread t = new Thread();
+
+        int i  = 0;
+        while(i < 1000){
+
+            i++;
+        }
 
     }
 
