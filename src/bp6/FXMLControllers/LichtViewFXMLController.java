@@ -6,22 +6,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+
 import java.net.URL;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class LichtViewFXMLController implements Initializable {
 
-    private ArrayList<Lichtwaarde> lichtwaarden;
-
     private final static String connectionUrl = "jdbc:mysql://localhost:3306/bp6?useSSL=false";
     //SQL Queries
     private static final String getLichtwaarden = "SELECT Tijd, Luxbinnen, Luxbuiten FROM lichtwaarde ORDER BY Tijd ASC LIMIT 20";
-
+    private ArrayList<Lichtwaarde> lichtwaarden;
+    private Connection conn;
     @FXML
     private Label verbruikteEnergie;
 
@@ -34,9 +31,7 @@ public class LichtViewFXMLController implements Initializable {
 
         lichtwaarden = new ArrayList<>();
 
-        try
-
-        {
+        try {
             conn = DriverManager.getConnection(connectionUrl, "root", "Stranger5709");
             try (Statement statement = conn.createStatement()) {
                 ResultSet rs = statement.executeQuery(getLichtwaarden);
@@ -61,8 +56,8 @@ public class LichtViewFXMLController implements Initializable {
             } catch (SQLException e) {
                 throw new Error("Error: " + e);
             }
-        } catch (Exception e){
-
+        } catch (Exception e) {
+            throw new Error("Error: " + e);
         }
     }
 
