@@ -1,7 +1,9 @@
 package bp6.Controllers;
 
 import bp6.FXMLControllers.LichtViewFXMLController;
+
 import bp6.Models.Lichtwaarde;
+
 import bp6.Models.LichtwaardeVerzameling;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,12 +23,16 @@ public class LichtViewController {
     public LichtViewController(DatabaseController dbController) {
         this.dbController = dbController;
         control = new LichtViewFXMLController();
+
         lichtwaardeVerzameling = new LichtwaardeVerzameling(this.dbController);
         lichtwaardes = lichtwaardeVerzameling.getLichtwaardes();
+
         setLichtView();
         getFXMLControl();
         createLichtWaardeSeries(lichtwaardes);
     }
+
+
 
     private void setLichtView() {
         try {
