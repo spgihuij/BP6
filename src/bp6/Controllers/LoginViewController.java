@@ -18,7 +18,6 @@ public class LoginViewController {
     public LoginViewController(DatabaseController dbController) {
         this.dbController = dbController;
         controlFXML = new LoginViewFXMLController();
-        RetrieveUsers();
         setLoginView();
         getFXMLControl();
 
@@ -46,10 +45,6 @@ public class LoginViewController {
 
 
 
-    private void RetrieveUsers() {
-
-        usernames = dbController.getGebruikers();
-    }
 
 
 }

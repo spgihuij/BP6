@@ -23,24 +23,24 @@ public class LichtwaardeVerzameling {
     }
 
 
-        private void checkArrayList()
+    private void checkArrayList()
+    {
+        lastLichtWaarde = DBController.getLichtwaarde();
+
+        if( lastLichtWaarde.getTijd().equals(lichtwaardes.get(20).getTijd()))
         {
-            lastLichtWaarde = DBController.getLichtwaarde();
+            pop();
+            lichtwaardes.add(lastLichtWaarde);
+        }
+    }
 
-            if( lastLichtWaarde.getTijd().equals(lichtwaardes.get(20).getTijd()))
-            {
-                pop();
-                lichtwaardes.add(lastLichtWaarde);
-            }
+    private void pop(){
+
+        if(lastLichtWaarde != lichtwaardes.get(0)){
+            lichtwaardes.remove(0);
         }
 
-        private void pop(){
-
-            if(lastLichtWaarde != lichtwaardes.get(0)){
-                lichtwaardes.remove(0);
-            }
-
-        }
+    }
 
     public ArrayList<Lichtwaarde> getLichtwaardes() {
         return lichtwaardes;

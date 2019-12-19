@@ -1,83 +1,71 @@
 package bp6.Controllers;
 
-import bp6.Models.Gebruiker;
 import bp6.Models.Lichtwaarde;
 import javafx.scene.chart.XYChart;
+
 import java.sql.*;
 import java.util.ArrayList;
 
 public class DatabaseController {
 
-    private Connection conn;
     private final static String connectionUrl = "jdbc:mysql://localhost:3306/bp6?useSSL=false";
-
     //SQL Queries
     private static final String getLichtwaarde = "SELECT Tijd, Luxbinnen, luxBuiten FROM lichtwaarde ORDER BY Tijd ASC LIMIT 1;";
     private static final String getLichtwaarden = "SELECT Tijd, Luxbinnen, luxBuiten FROM lichtwaarde ORDER BY Tijd ASC LIMIT 20;";
     private static final String getGebruikers = "SELECT * FROM gebruiker";
     private static final String getLastLichtwaarde = "SELECT * from lichtwaarde ORDER BY Tijd LIMIT 1";
+    private Connection conn;
 
     /**
      * Lichtwaarde arraylist vullen
-     *
-     *
-     *
-     *
      */
 
     public ArrayList<Lichtwaarde> getLichtwaarden() {
 
-        XYChart.Series<String, Integer> lichtwaardeSeries = new XYChart.Series<>();
-        ArrayList<Lichtwaarde> lichtwaardes = new ArrayList<Lichtwaarde>();
+        ArrayList<Lichtwaarde> lichtwaardes = new ArrayList<>();
 
         try {
 
-            conn = DriverManager.getConnection(connectionUrl, "root", "Stranger5709");
+            conn = DriverManager.getConnection(connectionUrl, "root", "admin");
             try (Statement statement = conn.createStatement()) {
                 ResultSet rs = statement.executeQuery(getLichtwaarden);
 
-                    while (rs.next()){
+                while (rs.next()) {
 
-                        Lichtwaarde newLichtwaarde = new Lichtwaarde(rs.getString(1), rs.getInt(2),rs.getInt(3));
-                        lichtwaardes.add(newLichtwaarde);
-                    }
+                    Lichtwaarde newLichtwaarde = new Lichtwaarde(rs.getString(1), rs.getInt(2), rs.getInt(3));
+                    lichtwaardes.add(newLichtwaarde);
+                }
                 rs.close();
                 conn.close();
 
-      // servi      conn = DriverManager.getConnection(connectionUrl, "root", "admin");
-
+                // servi      conn = DriverManager.getConnection(connectionUrl, "root", "admin");
 
             } catch (SQLException e) {
-                throw new Error("Error: " +  e);
+                throw new Error("Error: " + e);
             }
         } catch (SQLException e) {
             throw new Error("Error: " + e);
         }
         return lichtwaardes;
     }
+
     public Lichtwaarde getLichtwaarde() {
 
         try {
-            conn = DriverManager.getConnection(connectionUrl, "root", "Stranger5709");
+            conn = DriverManager.getConnection(connectionUrl, "root", "admin");
             try (Statement statement = conn.createStatement()) {
                 ResultSet rs = statement.executeQuery(getLichtwaarde);
-
-                while (rs.next()){
-
-                    Lichtwaarde newLichtwaarde = new Lichtwaarde(rs.getString(1), rs.getInt(2),rs.getInt(3));
-                    return newLichtwaarde;
-
-                }
-                rs.close();
                 conn.close();
 
+                Lichtwaarde newLichtwaarde = new Lichtwaarde(rs.getString(1), rs.getInt(2), rs.getInt(3));
+                return newLichtwaarde;
+
             } catch (SQLException e) {
-                throw new Error("Error: " +  e);
+                throw new Error("Error: " + e);
             }
         } catch (SQLException e) {
             throw new Error("Error: " + e);
         }
-        return null;
     }
 
 }

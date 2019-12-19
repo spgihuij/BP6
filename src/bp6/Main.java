@@ -17,7 +17,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         controller = new MainController();
 
-        Parent root = controller.getLichtView();
+        Parent root = controller.getRootView();
 
         Scene scene = new Scene(root, 1200, 800);
 

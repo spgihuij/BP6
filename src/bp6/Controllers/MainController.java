@@ -14,7 +14,7 @@ public class MainController {
         root = loginViewController.getLoginView();
     }
 
-    public Parent getLichtView() {
+    public Parent getRootView() {
         return root;
     }
 }

@@ -1,9 +1,7 @@
 package bp6.Controllers;
 
 import bp6.FXMLControllers.LichtViewFXMLController;
-
 import bp6.Models.Lichtwaarde;
-
 import bp6.Models.LichtwaardeVerzameling;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,13 +24,11 @@ public class LichtViewController {
 
         lichtwaardeVerzameling = new LichtwaardeVerzameling(this.dbController);
         lichtwaardes = lichtwaardeVerzameling.getLichtwaardes();
-
         setLichtView();
+
         getFXMLControl();
         createLichtWaardeSeries(lichtwaardes);
     }
-
-
 
     private void setLichtView() {
         try {
@@ -56,24 +52,21 @@ public class LichtViewController {
 
         XYChart.Series<Integer, String> lichtwaardenSeries = new XYChart.Series();
 
-        for (Lichtwaarde l: lichtwaarden) {
-            lichtwaardenSeries.getData().add(new XYChart.Data(l.getTijd(),l.getLuxBinnen()));
+        for (Lichtwaarde l : lichtwaarden) {
+            lichtwaardenSeries.getData().add(new XYChart.Data(l.getTijd(), l.getLuxBinnen()));
             lichtwaardenSeries.setName("Lux binnen");
         }
-
         control.setLineChart(lichtwaardenSeries);
     }
 
-    private void createData(){
+    private void createData() {
 
         Thread t = new Thread();
 
-        int i  = 0;
-        while(i < 1000){
+        int i = 0;
+        while (i < 1000) {
 
             i++;
         }
-
     }
-
 }
